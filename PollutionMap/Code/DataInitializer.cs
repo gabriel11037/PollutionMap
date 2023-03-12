@@ -14,7 +14,7 @@ namespace DI.Code
         public static readonly string _connectionString = GetConString();
         public void DataStartup()
         {
-            ClearDB();
+            ClearDB(); 
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 con.Open();

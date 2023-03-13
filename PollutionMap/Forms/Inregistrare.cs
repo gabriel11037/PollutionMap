@@ -7,14 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MDL.User;
 
 namespace PollutionMap.Forms
 {
-    public partial class Vizualizare : Form
+    public partial class Inregistrare : Form
     {
-        public UserModel User { get; set; }
-        public Vizualizare()
+        public Inregistrare()
         {
             InitializeComponent();
         }

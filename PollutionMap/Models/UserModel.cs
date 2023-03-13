@@ -1,9 +1,12 @@
-﻿namespace MDL.User
+﻿using System;
+
+namespace MDL.User
 {
-    class UserModel
+    public class UserModel
     {
         public string Nume { get; set; }
         public string Email { get; set; }
         public string Parola { get; set; }
+        public DateTime UltimaUtilizare { get; set; }
     }
 }

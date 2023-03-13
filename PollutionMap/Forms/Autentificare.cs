@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DI.Code;
 using PollutionMap.Forms;
+using RG.Code;
+using MDL.User;
 
 namespace PollutionMap
 {
@@ -26,14 +28,30 @@ namespace PollutionMap
         }
 
         private void LogareAuthBTN_Click(object sender, EventArgs e)
-        { 
-            var page = new Vizualizare();
-            page.Show();
+        {
+            UserModel user = Registration.CheckUser(NumeAuthTB.Text);
+            
+            if(user.Parola  == ParolaAuthTB.Text)
+            {
+                Registration.AddDate();
+                this.Close();
+                this.Visible = false;
+                var page = new Vizualizare()
+                {
+                    User = user
+                };
+                page.ShowDialog(this);
+            }
+            else
+            {
+                MessageBox.Show("A aparut o eroare la autentificare.");
+            }
         }
 
         private void ContNouAuthBTN_Click(object sender, EventArgs e)
         {
-
+            var page = new Inregistrare();
+            page.Show();
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.IO;
 using System;
+using System.Globalization;
 
 namespace DI.Code
 {
@@ -12,18 +13,18 @@ namespace DI.Code
             return ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         }
         public static readonly string _connectionString = GetConString();
-        public void DataStartup()
+        public static void DataStartup()
         {
             ClearDB(); 
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 con.Open();
 
-                string cmdTextHarti = "Insert into Harti (IdHarta,NumeHarta,FisierHarta) values (@IdHarta,@NumeHarta,@FisierHarta)";
-                string cmdTextMasurari = "Insert into Masurare (IdMasurare,IdHarta,PozitieX,PozitieY,ValoareMasurare,DataMasurare) values (@IdMasurare,@IdHarta,@PozitieX,@PozitieY,@ValoareMasurare,@DataMasurare)";
+                string cmdTextHarti = "Insert into Harti (NumeHarta,FisierHarta) values (@NumeHarta,@FisierHarta)";
+                string cmdTextMasurari = "Insert into Masurare (IdHarta,PozitieX,PozitieY,ValoareMasurare,DataMasurare) values (@IdHarta,@PozitieX,@PozitieY,@ValoareMasurare,@DataMasurare)";
 
-                string filePathHarti = "OJTI_2022_C#_Resurse//harti.txt//";
-                string filePathMasurari = "OJTI_2022_C#_Resurse//masurari.txt//";
+                string filePathHarti = "OJTI_2022_C#_Resurse//harti.txt";
+                string filePathMasurari = "OJTI_2022_C#_Resurse//masurari.txt";
 
                 using (StreamReader reader = new StreamReader(filePathHarti))
                 {
@@ -62,12 +63,13 @@ namespace DI.Code
                         
                         using (SqlCommand cmd = new SqlCommand(cmdTextMasurari, con))
                         {
-                            cmd.Parameters.AddWithValue("IdHarti", idHarta);
+                            cmd.Parameters.AddWithValue("IdHarta", idHarta);
                             cmd.Parameters.AddWithValue("PozitieX", line[1]);
                             cmd.Parameters.AddWithValue("PozitieY", line[2]);
                             cmd.Parameters.AddWithValue("ValoareMasurare", line[3]);
-                            string date = line[4].Trim();
-                            cmd.Parameters.AddWithValue("DataMasurare", DateTime.Parse(date));
+                            DateTime date = DateTime.ParseExact(line[4].Trim(), "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture);
+                            cmd.Parameters.AddWithValue("DataMasurare", date);
+
                             cmd.ExecuteNonQuery();
                         }
                     }
@@ -81,7 +83,7 @@ namespace DI.Code
                 con.Open();
                 string cmdText = "Delete from Harti";
                 EndQuery(con, cmdText);
-                cmdText = "Delete from Masurari";
+                cmdText = "Delete from Masurare";
                 EndQuery(con, cmdText);
                 cmdText = "Delete from Utilizatori";
                 EndQuery(con, cmdText);

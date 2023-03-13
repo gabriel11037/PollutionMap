@@ -90,8 +90,21 @@
       <DependentUpon>Autentificare.cs</DependentUpon>
     </Compile>
     <Compile Include="Code\DataInitializer.cs" />
+    <Compile Include="Forms\Vizualizare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Vizualizare.Designer.cs">
+      <DependentUpon>Vizualizare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Autentificare.resx">
+      <DependentUpon>Autentificare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Vizualizare.resx">
+      <DependentUpon>Vizualizare.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -116,34 +129,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="OJTI_2022_C#_Resurse\Background\back1.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back10.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back11.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back12.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back13.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back14.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back15.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back16.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back17.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back18.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back19.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back2.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back20.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back3.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back4.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back5.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back6.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back7.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back8.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\Background\back9.jpg" />
-    <Content Include="OJTI_2022_C#_Resurse\harti.txt" />
-    <Content Include="OJTI_2022_C#_Resurse\Harti\default_harta.png" />
-    <Content Include="OJTI_2022_C#_Resurse\Harti\harta_bucuresti.png" />
-    <Content Include="OJTI_2022_C#_Resurse\Harti\harta_cluj.png" />
-    <Content Include="OJTI_2022_C#_Resurse\Harti\harta_constanta.png" />
-    <Content Include="OJTI_2022_C#_Resurse\Harti\harta_iasi.png" />
-    <Content Include="OJTI_2022_C#_Resurse\Harti\harta_sibiu.png" />
-    <Content Include="OJTI_2022_C#_Resurse\masurari.txt" />
+    <Content Include="harti.txt" />
+    <Content Include="masurari.txt" />
     <Content Include="PMDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -164,8 +151,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -33,14 +33,13 @@ namespace PollutionMap
             
             if(user.Parola  == ParolaAuthTB.Text)
             {
-                Registration.AddDate();
                 this.Close();
                 this.Visible = false;
                 var page = new Vizualizare()
                 {
                     User = user
                 };
-                page.ShowDialog(this);
+                page.Show();
             }
             else
             {

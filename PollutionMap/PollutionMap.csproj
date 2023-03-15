@@ -109,6 +109,9 @@
     <EmbeddedResource Include="Forms\Autentificare.resx">
       <DependentUpon>Autentificare.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inregistrare.resx">
+      <DependentUpon>Inregistrare.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Vizualizare.resx">
       <DependentUpon>Vizualizare.cs</DependentUpon>
     </EmbeddedResource>

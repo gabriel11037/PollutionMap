@@ -22,7 +22,7 @@ namespace DI.Code
 
                 string cmdTextHarti = "Insert into Harti (NumeHarta,FisierHarta) values (@NumeHarta,@FisierHarta)";
                 string cmdTextMasurari = "Insert into Masurare (IdHarta,PozitieX,PozitieY,ValoareMasurare,DataMasurare) values (@IdHarta,@PozitieX,@PozitieY,@ValoareMasurare,@DataMasurare)";
-
+                
                 string filePathHarti = "OJTI_2022_C#_Resurse//harti.txt";
                 string filePathMasurari = "OJTI_2022_C#_Resurse//masurari.txt";
 

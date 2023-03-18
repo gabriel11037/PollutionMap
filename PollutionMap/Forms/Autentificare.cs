@@ -31,20 +31,21 @@ namespace PollutionMap
         {
             UserModel user = Registration.CheckUser(NumeAuthTB.Text);
             
-            if(user.Parola  == ParolaAuthTB.Text)
-            {
-                this.Close();
+            //if(user.Parola  == ParolaAuthTB.Text)
+            //{
+                
                 this.Visible = false;
                 var page = new Vizualizare()
                 {
                     User = user
                 };
-                page.Show();
-            }
-            else
-            {
+                page.ShowDialog(this);
+                this.Close();
+            //}
+            //else
+            //{
                 MessageBox.Show("A aparut o eroare la autentificare.");
-            }
+            //}
         }
 
         private void ContNouAuthBTN_Click(object sender, EventArgs e)

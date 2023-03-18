@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="PMDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PMDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.PollutionMap.Properties.Settings.GlobalReference.Default.PMDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HartiTableAdapter" GeneratorDataComponentClassName="HartiTableAdapter" Name="Harti" UserDataComponentName="HartiTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PMDBConnectionString (Settings)" DbObjectName="dbo.Harti" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT NumeHarta FROM dbo.Harti</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NumeHarta" DataSetColumn="NumeHarta" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Harti1TableAdapter" GeneratorDataComponentClassName="Harti1TableAdapter" Name="Harti1" UserDataComponentName="Harti1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PMDBConnectionString (Settings)" DbObjectName="dbo.Harti" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT FisierHarta FROM dbo.Harti</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FisierHarta" DataSetColumn="FisierHarta" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Harti" msprop:Generator_TableClassName="HartiDataTable" msprop:Generator_TableVarName="tableHarti" msprop:Generator_TablePropName="Harti" msprop:Generator_RowDeletingName="HartiRowDeleting" msprop:Generator_RowChangingName="HartiRowChanging" msprop:Generator_RowEvHandlerName="HartiRowChangeEventHandler" msprop:Generator_RowDeletedName="HartiRowDeleted" msprop:Generator_UserTableName="Harti" msprop:Generator_RowChangedName="HartiRowChanged" msprop:Generator_RowEvArgName="HartiRowChangeEvent" msprop:Generator_RowClassName="HartiRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NumeHarta" msprop:Generator_ColumnVarNameInTable="columnNumeHarta" msprop:Generator_ColumnPropNameInRow="NumeHarta" msprop:Generator_ColumnPropNameInTable="NumeHartaColumn" msprop:Generator_UserColumnName="NumeHarta">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Harti1" msprop:Generator_TableClassName="Harti1DataTable" msprop:Generator_TableVarName="tableHarti1" msprop:Generator_TablePropName="Harti1" msprop:Generator_RowDeletingName="Harti1RowDeleting" msprop:Generator_RowChangingName="Harti1RowChanging" msprop:Generator_RowEvHandlerName="Harti1RowChangeEventHandler" msprop:Generator_RowDeletedName="Harti1RowDeleted" msprop:Generator_UserTableName="Harti1" msprop:Generator_RowChangedName="Harti1RowChanged" msprop:Generator_RowEvArgName="Harti1RowChangeEvent" msprop:Generator_RowClassName="Harti1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FisierHarta" msprop:Generator_ColumnVarNameInTable="columnFisierHarta" msprop:Generator_ColumnPropNameInRow="FisierHarta" msprop:Generator_ColumnPropNameInTable="FisierHartaColumn" msprop:Generator_UserColumnName="FisierHarta">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Harti_Harti1" msdata:parent="Harti" msdata:child="Harti1" msdata:parentkey="NumeHarta" msdata:childkey="FisierHarta" msprop:Generator_UserChildTable="Harti1" msprop:Generator_ChildPropName="GetHarti1Rows" msprop:Generator_UserRelationName="Harti_Harti1" msprop:Generator_ParentPropName="HartiRow" msprop:Generator_RelationVarName="relationHarti_Harti1" msprop:Generator_UserParentTable="Harti" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
